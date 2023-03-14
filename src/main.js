@@ -3,6 +3,8 @@ import './assets/app_style.css';
 import './assets/bootstrap-grid_min.css'
 import App from './App.vue'
 
+import {store}  from '@/state/store';
+
 // Vuetify
 
 import { createVuetify } from 'vuetify'
@@ -14,4 +16,4 @@ const vuetify = createVuetify({
     directives,
 })
 
-createApp(App).use(vuetify).mount('#app')
+createApp(App).use(vuetify).use(store).mount('#app')
