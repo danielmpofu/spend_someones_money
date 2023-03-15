@@ -1,5 +1,8 @@
 <template>
  tt
+  <div class="hello">
+    {{ msg }}
+  </div>
 </template>
 
 <script>
