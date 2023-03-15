@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <app-nav></app-nav>
+
+    <div class="container">
+      <div  v-if="!isBillionManSelected">
+        <choose-billionnaire></choose-billionnaire>
+      </div>
+
+      <div v-if="isBillionManSelected">
+        <catalog-header class="mt-5 mb-5"></catalog-header>
+        <hr>
+        <products-catalog></products-catalog>
+      </div>
+
+
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppNav from "@/components/AppNav";
+import ChooseBillionnaire from "@/components/ChooseBillionnaire";
+import CatalogHeader from "@/components/CatalogHeader";
+import ProductsCatalog from "@/components/ProductsCatalog";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppNav, ChooseBillionnaire, CatalogHeader,ProductsCatalog
+  },
+
+  computed: {
+    isBillionManSelected() {
+      return this.$store.state.selectedBillionaire !== undefined;
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>

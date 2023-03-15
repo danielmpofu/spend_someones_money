@@ -5824,6 +5824,11 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue3-autocounter@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vue3-autocounter/-/vue3-autocounter-1.0.6.tgz#655e275707aeb084628facd7b231be09d383521d"
+  integrity sha512-jOgCD2WaOjt/tOAAGKDm2DTyQRdKyfqJv5ElUz/vR0ZJgUd4yDd6UX6+2YU3LQpY4qoFNZkzLloAfALAqK041g==
+
 vue@^3.2.13:
   version "3.2.47"
   resolved "https://registry.npmjs.org/vue/-/vue-3.2.47.tgz"
@@ -5837,7 +5842,7 @@ vue@^3.2.13:
 
 vuetify@^3.0.0:
   version "3.1.8"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.1.8.tgz#15a1b1713d1374c87f1a65dabaf185e820f410f6"
+  resolved "https://registry.npmjs.org/vuetify/-/vuetify-3.1.8.tgz"
   integrity sha512-yODCnRxERSvcBwC6qPiySVhmZzNZ2Yme6b2lNLY1G8W/hbipAtbTCFVGB4ZY/qY7D7JNQBxzgVfZme7bDY9ZrQ==
 
 vuex@^4.0.2:
