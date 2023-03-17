@@ -2,7 +2,7 @@
   <div
       style="width: 18rem"
       class="card mx-2 my-2">
-    <img src="{{product.picture}}" class="card-img-top" alt="">
+    <img :src="product.picture" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p>{{ product.price }}</p>
