@@ -20,7 +20,8 @@
               class="form-control">
         </div>
         <div class="col">
-          <button @click="deduct" class="btn btn-outline-danger">Sell</button>
+          <button @click="deduct"
+                  class="btn btn-outline-danger">Sell</button>
         </div>
       </div>
     </div>
