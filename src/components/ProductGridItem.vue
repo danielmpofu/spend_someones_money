@@ -1,11 +1,10 @@
 <template>
-  <div
-      style="width: 18rem"
-      class="card mx-2 my-2">
-    <img :src="product.picture" class="card-img-top" alt="">
+
+  <figure class="card">
+    <img class="figure-img" :src="product.picture" :alt="product.name">
     <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
-      <p>{{ product.price }}</p>
+      <h3> {{ product.name }} </h3>
+      <p>Net Worthy: £{{ product.price }}.00</p>
       <div class="row">
         <div class="col">
           <button @click="add" class="btn btn-outline-primary">Buy</button>
@@ -15,17 +14,19 @@
               type="number"
               min="0"
               id="text"
-
+              disabled
               v-model="productQty"
               class="form-control">
         </div>
         <div class="col">
           <button @click="deduct"
-                  class="btn btn-outline-danger">Sell</button>
+                  class="btn btn-outline-danger">Sell
+          </button>
         </div>
       </div>
     </div>
-  </div>
+  </figure>
+
 </template>
 
 <script>
@@ -37,29 +38,36 @@ export default {
       productQty: 0
     }
   },
+  computed: {
+    amountBalanceAvailable() {
+      return this.$store.state.amountBalanceAvailable;
+    }
+  },
+
   methods: {
-    calculate(){
+    calculate() {
       let z = document.getElementById("text");
-      console .log(z)
+      console.log(z)
     },
     add() {
-      this.productQty += 1;
-      let tot = this.productQty * this.product.price;
-      this.$store.commit("buyItems",tot);
+      let amountBalanceAvailable = this.amountBalanceAvailable;
+      if (amountBalanceAvailable >= this.product.price) {
+        this.productQty = this.productQty + 1;
+        let tot = this.productQty * this.product.price;
+        this.$store.commit("buyItems", tot);
+      }
+      console.log(amountBalanceAvailable);
 
     },
+
     deduct() {
-
       if (this.productQty !== 0) {
-
         let tot = this.productQty * this.product.price;
-        this.$store.commit("sellItems",tot);
-        this.productQty -= 1;
+        this.$store.commit("sellItems", tot);
+        this.productQty = this.productQty - 1;
       } else {
         this.productQty = 0;
       }
-
-
     }
   }
 }

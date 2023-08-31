@@ -3,6 +3,7 @@
     <app-nav></app-nav>
 
     <div class="container">
+
       <div  v-if="!isBillionManSelected">
         <choose-billionnaire></choose-billionnaire>
       </div>
