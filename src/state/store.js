@@ -128,11 +128,11 @@ export const store = new Vuex.Store({
             //otherwise just add it
 
             if (item.price < state.amountBalanceAvailable) {
-                //if(!this.itemIsInCart(item)){
+                if(!this.itemIsInCart(item)){
                   state.userCart.push(item);
-                //}else{
-                    //find a way to increment the qty.
-                //}
+                }else{
+               //     find a way to increment the qty.
+                }
                 state.amountBalanceAvailable = state.amountBalanceAvailable - item.price;
             } else {
                 //give a feedback

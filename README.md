@@ -1,4 +1,11 @@
-# spend_someones_money
+# spend someone's cash
+so here's whats this project all about.
+
+You select your fav rich man
+then you are given his/her money 
+lets see how you'd spend it till you got non lol
+
+sounds crazy huh let's see
 
 ## Project setup
 ```
